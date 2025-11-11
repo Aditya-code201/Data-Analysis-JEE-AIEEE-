@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sources for JEE Analysis</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            Data Sources & Methodology
+        </h1>
+
+        <!-- Methodology Note -->
+        <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg mb-6">
+            <h2 class="font-semibold text-lg text-gray-800 mb-2">Note on Data Compilation</h2>
+            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+                The data presented in the chart is aggregated from numerous public sources published over the last 15 years. No single official document contains all of this historical data in one place. The figures are compiled from official press releases (from NTA, JoSAA, and individual IITs), reputable news articles (like The Times of India, The Indian Express), and major education portals (like Careers360, Shiksha) that track exam data year-over-year.
+                <br><br>
+                Small variations may exist depending on the source (e.g., "registered" vs. "appeared" candidates). The figures used are the most commonly reported and consistent numbers for each year.
+            </p>
+        </div>
+
+        <!-- Data Table -->
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+            Compiled Data Table
+        </h2>
+        <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+            <table class="w-full min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Year</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Total IIT Seats</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Advanced / IIT-JEE Aspirants</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Mains / AIEEE Aspirants</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <!-- Data entries -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2010</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">9,509</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~450,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,000,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2011</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">9,611</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~480,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,060,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2012</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">9,647</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~500,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,140,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2013</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">9,867</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~115,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,280,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2014</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">9,885</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~119,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,350,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2015</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">10,006</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~117,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,300,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2016</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">10,572</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~147,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,190,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2017</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">10,988</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~170,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,180,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2018</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">11,279</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~155,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,040,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2019</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">13,604</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~161,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~930,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2020</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">16,053</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~150,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~920,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2021</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">16,232</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~141,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~940,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2022</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">16,598</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~156,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~900,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2023</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">17,385</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~180,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,110,000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-800">2s024</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">17,385</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~180,000</td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">~1,220,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Source Links -->
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mt-8 mb-4">
+            Primary Source Types
+        </h2>
+        <p class="text-gray-700 mb-6">This data is primarily sourced from official reports and press releases from the following bodies, as well as archived news reports from major publications.</p>
+        <div class="space-y-4">
+            <div class="flex items-start">
+                <span class="flex-shrink-0 w-5 h-5 text-indigo-600 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"></path>
+                    </svg>
+                </span>
+                <div class="ml-3">
+                    <p class="font-medium text-gray-900">Official NTA / JEE Main Portal</p>
+                    <p class="text-sm text-gray-600">For JEE Main aspirant data (post-2013) and AIEEE data (pre-2013).</p>
+                    <a href="https://nta.ac.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:underline">https://nta.ac.in/</a>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <span class="flex-shrink-0 w-5 h-5 text-indigo-600 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"></path>
+                    </svg>
+                </span>
+                <div class="ml-3">
+                    <p class="font-medium text-gray-900">Official JEE Advanced Portal</p>
+                    <p class="text-sm text-gray-600">For JEE Advanced aspirant data and annual reports.</p>
+                    <a href="https://jeeadv.ac.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:underline">https://jeeadv.ac.in/</a>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <span class="flex-shrink-0 w-5 h-5 text-indigo-600 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"></path>
+                    </svg>
+                </span>
+                <div class="ml-3">
+                    <p class="font-medium text-gray-900">JoSAA / CSAB Portals</p>
+                    <p class="text-sm text-gray-600">For official seat matrix data (total seats) released during counseling.</p>
+                    <a href="https://josaa.nic.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:underline">https://josaa.nic.in/</a>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <span class="flex-shrink-0 w-5 h-5 text-indigo-600 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"></path>
+                    </svg>
+                </span>
+                <div class="ml-3">
+                    <p class="font-medium text-gray-900">News & Education Portals</p>
+                    <p class="text-sm text-gray-600">For historical data and year-on-year analysis reports.</p>
+                    <a href="https://timesofindia.indiatimes.com/education" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:underline block">Times of India (Education)</a>
+                    <a href="https://indianexpress.com/education" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:underline block">Indian Express (Education)</a>
+                    <a href="https://www.careers360.com/engineering" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-600 hover:underline block">Careers360</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-10">
+            <a href="index.html" 
+               class="bg-indigo-600 text-white font-medium py-2 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                &larr; Back to Chart
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
