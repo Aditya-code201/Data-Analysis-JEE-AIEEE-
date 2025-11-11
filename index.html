@@ -1,257 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEE Aspirant vs. Seat Gap Analysis</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Load Inter font -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
-  </head>
-  <body class="bg-gray-100 min-h-screen p-4 md:p-8">
+</head>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8">
     <div class="max-w-7xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-      <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
-        IIT Aspirant vs. Seat Gap Analysis (2010-2024)
-      </h1>
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+            IIT Aspirant vs. Seat Gap Analysis (2010-2024)
+        </h1>
+        
+        <!-- Data Disclaimer Note -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-lg mb-6 text-sm md:text-base">
+            <p class="font-bold mb-2">Important Data Note:</p>
+            <ul class="list-disc list-inside space-y-1">
+                <li><strong>2013 Exam Change:</strong> Before 2013, the exams were AIEEE (for NITs/IIITs) and IIT-JEE (for IITs). From 2013, they became JEE Main and JEE Advanced.</li>
+                <li><strong>"Advanced" Aspirants:</strong> Pre-2013, the "Advanced" number reflects all students who sat for the single IIT-JEE exam. Post-2013, it reflects only the top ~1.5-2.5L students who qualified from JEE Main to sit for JEE Advanced. This causes the significant drop you see in that line after 2012.</li>
+                <li><strong>"Mains" Aspirants:</strong> This number represents the total unique candidates who registered for/appeared in JEE Main (or AIEEE pre-2013).</li>
+                <li>Data is compiled from various official reports and media sources; exact numbers can vary slightly.</li>
+            </ul>
+        </div>
 
-      <!-- Data Disclaimer Note -->
-      <div
-        class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-lg mb-6 text-sm md:text-base"
-      >
-        <p class="font-bold mb-2">Important Data Note:</p>
-        <ul class="list-disc list-inside space-y-1">
-          <li>
-            <strong>2013 Exam Change:</strong> Before 2013, the exams were AIEEE
-            (for NITs/IIITs) and IIT-JEE (for IITs). From 2013, they became JEE
-            Main and JEE Advanced.
-          </li>
-          <li>
-            <strong>"Advanced" Aspirants:</strong> Pre-2013, the "Advanced"
-            number reflects all students who sat for the single IIT-JEE exam.
-            Post-2013, it reflects only the top ~1.5-2.5L students who qualified
-            from JEE Main to sit for JEE Advanced. This causes the significant
-            drop you see in that line after 2012.
-          </li>
-          <li>
-            <strong>"Mains" Aspirants:</strong> This number represents the total
-            unique candidates who registered for/appeared in JEE Main (or AIEEE
-            pre-2013).
-          </li>
-          <li>
-            Data is compiled from various official reports and media sources;
-            exact numbers can vary slightly.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Chart Container -->
-      <div class="h-[60vh] md:h-[70vh] w-full relative">
-        <canvas id="aspirantChart"></canvas>
-      </div>
-
-      <!-- Toggle Button -->
-      <div class="text-center mt-6">
-        <button
-          id="toggleScale"
-          class="bg-indigo-600 text-white font-medium py-2 px-5 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-        >
-          Switch to Logarithmic Scale
-        </button>
-      </div>
-
-      <!-- Analysis Summary -->
-      <div class="mt-8 pt-6 border-t border-gray-200">
-        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
-          What This Graph Shows
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          As you can clearly see, the gap between the number of aspirants (both
-          Mains and Advanced) and the number of available IIT seats is massive.
-        </p>
-        <ul class="list-disc list-inside space-y-2 mt-4 text-gray-700">
-          <li>
-            The
-            <strong class="text-red-600">red line (Mains/AIEEE)</strong> shows
-            the total applicant pool, which is consistently over 10 Lakh (1
-            million) candidates.
-          </li>
-          <li>
-            The
-            <strong class="text-orange-500"
-              >orange line (Advanced/IIT-JEE)</strong
-            >
-            shows the filtered pool of candidates competing for IITs.
-          </li>
-          <li>
-            The <strong class="text-teal-600">green line (IIT Seats)</strong> at
-            the very bottom shows the total number of seats. While the number of
-            seats has grown (from ~9,500 to ~17,400), it has not grown at the
-            same rate as the number of aspirants.
-          </li>
-          <li>
-            It is visually clear that the vertical distance between the top
-            lines and the bottom line is very large and remains so over the
-            entire period.
-          </li>
-        </ul>
-      </div>
+        <!-- Chart Container -->
+        <div class="h-[60vh] md:h-[70vh] w-full relative">
+            <canvas id="aspirantChart"></canvas>
+        </div>
+        
+        <!-- Toggle Button -->
+        <div class="text-center mt-6">
+            <button id="toggleScale" class="bg-indigo-600 text-white font-medium py-2 px-5 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                Switch to Logarithmic Scale
+            </button>
+        </div>
+        
+        <!-- Analysis Summary -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">What This Graph Shows</h2>
+            <p class="text-gray-700 leading-relaxed">
+                As you can clearly see, the gap between the number of aspirants (both Mains and Advanced) and the number of available IIT seats is massive. 
+            </p>
+            <ul class="list-disc list-inside space-y-2 mt-4 text-gray-700">
+                <li>The <strong class="text-red-600">red line (Mains/AIEEE)</strong> shows the total applicant pool, which is consistently over 10 Lakh (1 million) candidates.</li>
+                <li>The vertical distance between the top lines and the bottom line represents the "gap" you were asking about. It is visually very large and remains so over the entire period.</li>
+            </ul>
+            
+            <!-- Link to data sources -->
+            <div class="mt-6 text-center">
+                <a href="references.html" 
+                   target="_blank" 
+                   class="text-sm font-medium text-indigo-600 hover:text-indigo-800 hover:underline transition-all duration-200"
+                   title="View data and sources in a new tab">
+                    View Data and Sources
+                </a>
+            </div>
+            
+        </div>
     </div>
 
     <script>
-      window.onload = function () {
-        // Combined data for JEE (Mains/AIEEE), JEE (Advanced/IIT-JEE), and IIT Seats
-        const chartData = [
-          { year: 2010, seats: 9509, advanced: 450000, mains: 1000000 },
-          { year: 2011, seats: 9611, advanced: 480000, mains: 1060000 },
-          { year: 2012, seats: 9647, advanced: 500000, mains: 1140000 },
-          // --- Exam system changed in 2013 ---
-          { year: 2013, seats: 9867, advanced: 115000, mains: 1280000 },
-          { year: 2014, seats: 9885, advanced: 119000, mains: 1350000 },
-          { year: 2015, seats: 10006, advanced: 117000, mains: 1300000 },
-          { year: 2016, seats: 10572, advanced: 147000, mains: 1190000 },
-          { year: 2017, seats: 10988, advanced: 170000, mains: 1180000 },
-          { year: 2018, seats: 11279, advanced: 155000, mains: 1040000 },
-          { year: 2019, seats: 13604, advanced: 161000, mains: 930000 }, // Unique candidates for Mains
-          { year: 2020, seats: 16053, advanced: 150000, mains: 920000 }, // Unique candidates
-          { year: 2021, seats: 16232, advanced: 141000, mains: 940000 }, // Unique candidates
-          { year: 2022, seats: 16598, advanced: 156000, mains: 900000 }, // Unique candidates
-          { year: 2023, seats: 17385, advanced: 180000, mains: 1110000 }, // Unique candidates
-          { year: 2024, seats: 17385, advanced: 180000, mains: 1220000 }, // Unique candidates
-        ];
+        window.onload = function () {
+            // Combined data for JEE (Mains/AIEEE), JEE (Advanced/IIT-JEE), and IIT Seats
+            const chartData = [
+                { year: 2010, seats: 9509, advanced: 450000, mains: 1000000 },
+                { year: 2011, seats: 9611, advanced: 480000, mains: 1060000 },
+                { year: 2012, seats: 9647, advanced: 500000, mains: 1140000 },
+                // --- Exam system changed in 2013 ---
+                { year: 2013, seats: 9867, advanced: 115000, mains: 1280000 },
+                { year: 2014, seats: 9885, advanced: 119000, mains: 1350000 },
+                { year: 2015, seats: 10006, advanced: 117000, mains: 1300000 },
+                { year: 2016, seats: 10572, advanced: 147000, mains: 1190000 },
+                { year: 2017, seats: 10988, advanced: 170000, mains: 1180000 },
+                { year: 2018, seats: 11279, advanced: 155000, mains: 1040000 },
+                { year: 2019, seats: 13604, advanced: 161000, mains: 930000 }, // Unique candidates for Mains
+                { year: 2020, seats: 16053, advanced: 150000, mains: 920000 }, // Unique candidates
+                { year: 2021, seats: 16232, advanced: 141000, mains: 940000 }, // Unique candidates
+                { year: 2022, seats: 16598, advanced: 156000, mains: 900000 }, // Unique candidates
+                { year: 2023, seats: 17385, advanced: 180000, mains: 1110000 }, // Unique candidates
+                { year: 2024, seats: 17385, advanced: 180000, mains: 1220000 }  // Unique candidates
+            ];
 
-        const labels = chartData.map((d) => d.year.toString());
-        const seatsData = chartData.map((d) => d.seats);
-        const advancedData = chartData.map((d) => d.advanced);
-        const mainsData = chartData.map((d) => d.mains);
+            const labels = chartData.map(d => d.year.toString());
+            const seatsData = chartData.map(d => d.seats);
+            const advancedData = chartData.map(d => d.advanced);
+            const mainsData = chartData.map(d => d.mains);
 
-        const ctx = document.getElementById("aspirantChart").getContext("2d");
-
-        const chartConfig = {
-          type: "line",
-          data: {
-            labels: labels,
-            datasets: [
-              {
-                label: "JEE Mains / AIEEE Aspirants",
-                data: mainsData,
-                borderColor: "rgb(255, 99, 132)",
-                backgroundColor: "rgba(255, 99, 132, 0.2)",
-                borderWidth: 3,
-                fill: true,
-                tension: 0.1,
-              },
-              {
-                label: "JEE Advanced / IIT-JEE Aspirants",
-                data: advancedData,
-                borderColor: "rgb(255, 159, 64)",
-                backgroundColor: "rgba(255, 159, 64, 0.2)",
-                borderWidth: 3,
-                fill: false,
-                tension: 0.1,
-              },
-              {
-                label: "Total IIT B.Tech Seats",
-                data: seatsData,
-                borderColor: "rgb(75, 192, 192)",
-                backgroundColor: "rgba(75, 192, 192, 0.2)",
-                borderWidth: 3,
-                fill: false,
-                tension: 0.1,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: {
-              mode: "index",
-              intersect: false,
-            },
-            scales: {
-              y: {
-                type: "linear", // Initial scale is linear
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: "Number of People (Linear Scale)",
-                  font: {
-                    size: 14,
-                    weight: "500",
-                  },
+            const ctx = document.getElementById('aspirantChart').getContext('2d');
+            
+            const chartConfig = {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'JEE Mains / AIEEE Aspirants',
+                            data: mainsData,
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'JEE Advanced / IIT-JEE Aspirants',
+                            data: advancedData,
+                            borderColor: 'rgb(255, 159, 64)',
+                            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                            borderWidth: 3,
+                            fill: false,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Total IIT B.Tech Seats',
+                            data: seatsData,
+                            borderColor: 'rgb(75, 192, 192)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderWidth: 3,
+                            fill: false,
+                            tension: 0.1
+                        }
+                    ]
                 },
-              },
-              x: {
-                title: {
-                  display: true,
-                  text: "Year",
-                  font: {
-                    size: 14,
-                    weight: "500",
-                  },
-                },
-              },
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: function (context) {
-                    let label = context.dataset.label || "";
-                    if (label) {
-                      label += ": ";
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear', // Initial scale is linear
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of People (Linear Scale)',
+                                font: {
+                                    size: 14,
+                                    weight: '500'
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Year',
+                                font: {
+                                    size: 14,
+                                    weight: '500'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y.toLocaleString('en-IN');
+                                    }
+                                    return label;
+                                }
+                            }
+                        },
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                padding: 20,
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
                     }
-                    if (context.parsed.y !== null) {
-                      label += context.parsed.y.toLocaleString("en-IN");
-                    }
-                    return label;
-                  },
-                },
-              },
-              legend: {
-                position: "top",
-                labels: {
-                  padding: 20,
-                  font: {
-                    size: 14,
-                  },
-                },
-              },
-            },
-          },
+                }
+            };
+
+            const myChart = new Chart(ctx, chartConfig);
+
+            // Button logic to toggle scale
+            const toggleButton = document.getElementById('toggleScale');
+            toggleButton.addEventListener('click', () => {
+                const currentType = myChart.config.options.scales.y.type;
+                if (currentType === 'linear') {
+                    myChart.config.options.scales.y.type = 'logarithmic';
+                    myChart.config.options.scales.y.title.text = 'Number of People (Logarithmic Scale)';
+                    toggleButton.textContent = 'Switch to Linear Scale';
+                } else {
+                    myChart.config.options.scales.y.type = 'linear';
+                    myChart.config.options.scales.y.title.text = 'Number of People (Linear Scale)';
+                    toggleButton.textContent = 'Switch to Logarithmic Scale';
+                }
+                myChart.update();
+            });
         };
-
-        const myChart = new Chart(ctx, chartConfig);
-
-        // Button logic to toggle scale
-        const toggleButton = document.getElementById("toggleScale");
-        toggleButton.addEventListener("click", () => {
-          const currentType = myChart.config.options.scales.y.type;
-          if (currentType === "linear") {
-            myChart.config.options.scales.y.type = "logarithmic";
-            myChart.config.options.scales.y.title.text =
-              "Number of People (Logarithmic Scale)";
-            toggleButton.textContent = "Switch to Linear Scale";
-          } else {
-            myChart.config.options.scales.y.type = "linear";
-            myChart.config.options.scales.y.title.text =
-              "Number of People (Linear Scale)";
-            toggleButton.textContent = "Switch to Logarithmic Scale";
-          }
-          myChart.update();
-        });
-      };
     </script>
-  </body>
+</body>
 </html>
-
-
